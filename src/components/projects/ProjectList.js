@@ -10,8 +10,6 @@ const ProjectList = () => {
             <ProjectSummary />
             <ProjectSummary />
 
-
-
         </div>
     );
 };

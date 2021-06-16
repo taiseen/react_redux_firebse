@@ -10,3 +10,4 @@
 
 ## Learning Concepts
 * Planing Component Data Flow Architecture
+* Details look about React Router (url parameter) [ const id = props.match.params.id ]
