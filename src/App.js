@@ -4,23 +4,23 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-import Home from './components/Home';
+import Navbar from './components/layout/Navbar';
 import PageNotFound from './components/PageNotFound';
+import Dashboard from './components/dashboard/Dashboard';
 
-// 9-March-2021
+// 17-Jun-2021
 // after finish ==>> attach output-ui
 
 const App = () => {
 
     return (
-        <div>
-            <Router>
-                <Switch>
-                    <Route path="/" exact component={Home} />
-                    <Route path="*" component={PageNotFound} />
-                </Switch>
-            </Router>
-        </div>
+        <Router>
+            <Navbar />
+            <Switch>
+                <Route path="/" exact component={Dashboard} />
+                <Route path="*" component={PageNotFound} />
+            </Switch>
+        </Router>
     );
 };
 

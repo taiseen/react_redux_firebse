@@ -1,7 +1,17 @@
+import ProjectSummary from './ProjectSummary';
+
 const ProjectList = () => {
+
     return (
-        <div>
-            
+        <div className="project-list section">
+
+            <ProjectSummary />
+            <ProjectSummary />
+            <ProjectSummary />
+            <ProjectSummary />
+
+
+
         </div>
     );
 };
