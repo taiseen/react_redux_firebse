@@ -2,7 +2,7 @@
 # React Redux FireBase APP 
 
 ## Technology Used 
-* [Materialize CSS](https://materializecss.com/)
+* [Materialize CSS](https://materializecss.com)
 
 ## Focus On Topic
 * Class Component
