@@ -1,10 +1,11 @@
 // 18-Jun-2021
 
-const initState = {
+const initState = { // 2 | store
 
 }
 
-const authReducer = (state = initState, action) => {
+const authReducer = (state = initState, action) => { // 1
+    // manipulate state 
     return state;
 };
 

@@ -1,5 +1,7 @@
 
 const ProjectDetails = (props) => {
+    
+    //console.log(props)
 
     const id = props.match.params.id;
 

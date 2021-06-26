@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import Notifications from './Notifications';
-import ProjectList from '../projects/ProjectList';
-import { connect } from 'react-redux';
-
-
+import Notifications from './Notifications'; // child --> 1
+import ProjectList from '../projects/ProjectList'; // child --> 2
+import { connect } from 'react-redux'; // binding layer of redux with react
 
 class Dashboard extends Component {
 
     render() {
+        console.log(this.props)
 
         const { projects } = this.props;
 
@@ -29,11 +28,11 @@ class Dashboard extends Component {
         );
     }
 }
-
+// a function which ==> map our Store To Props
 const mapStateToProps = (state) => {
-    return {
-        projects: state.projects.project
+    return { // Object ==> which property are attach to props
+        projects: state.project.projects
     }
 };
-
+// Higher Order Component | which return ==> Dashboard Component
 export default connect(mapStateToProps)(Dashboard);
