@@ -1,11 +1,17 @@
-export const createProject = (project) => {
+// 26-Jun-2021
+// Redux Middleware ==> Redux Thunk
+// run between these 2 points -->
+// 1) dispatch action & 2) reducer 
 
+export const createProject = (project) => {
+    console.log(project)
     return (dispatch, getState) => {
-        // make asynchronous call to DataBase 
+
+        // make asynchronous call for DataBase 
+
         dispatch({
             type: 'CREATE_PROJECT',
             project
         });
-
     };
 };

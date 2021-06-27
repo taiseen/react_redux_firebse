@@ -16,3 +16,4 @@
 * Multiple Redux ==> Combine into a 1 single Root Reducer
 * Register that Root Reducer in App.js < Component /> 
 * Redux Thunk | as a middleware for asynchronous DataBase Connection
+* Firebase ==> firestore - NoSQL DB
