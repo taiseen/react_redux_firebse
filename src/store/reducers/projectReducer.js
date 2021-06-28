@@ -10,8 +10,13 @@ const projectReducer = (state = initState, action) => { // 1
 
     switch (action.type) {
         case 'CREATE_PROJECT':
-            return console.log('projects ==> ', action.project);
+            console.log('projects ==> ', action.project);
+            return { ...state, projects: action.project };
+        case 'CREATE_PROJECT_ERROR':
+            
+            return console.log('projects error ==> ', action.err);;
         default:
+            console.log('default ==> ', state);
             return state;
     }
 };

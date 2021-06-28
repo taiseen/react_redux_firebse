@@ -11,9 +11,18 @@ export const createProject = (project) => {
 
         // make asynchronous call for DataBase 
 
-        dispatch({
-            type: 'CREATE_PROJECT',
-            project
-        });
+        const firestore = getFirestore();
+        firestore.collection('projects').add({
+            ...project,
+            authorFirstName: 'Taiseen',
+            authorLastName: 'Azam',
+            authorID: 1243,
+            createdAt: new Date(),
+        }).then(() => {
+            dispatch({ type: 'CREATE_PROJECT', project });
+        }).then(err => {
+            dispatch({ type: 'CREATE_PROJECT_ERROR', err });
+        })
+
     };
 };
