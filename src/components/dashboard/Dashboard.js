@@ -6,8 +6,6 @@ import { connect } from 'react-redux'; // binding layer of redux with react
 class Dashboard extends Component {
 
     render() {
-        console.log(this.props)
-
         const { projects } = this.props;
 
         return (
@@ -32,7 +30,7 @@ class Dashboard extends Component {
 const mapStateToProps = (state) => {
     return { // Object ==> which property are attach to props
         projects: state.project.projects
-    }
+    } // componentState.rootRed.projectReducer
 };
 // Higher Order Component | which return ==> Dashboard Component
 export default connect(mapStateToProps)(Dashboard);

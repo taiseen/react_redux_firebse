@@ -7,6 +7,7 @@ class CreateProject extends Component {
         title: '',
         content: ''
     }
+    
     handleChange = (e) => {
         this.setState({
             [e.target.id]: e.target.value,

@@ -17,3 +17,11 @@
 * Register that Root Reducer in App.js < Component /> 
 * Redux Thunk | as a middleware for asynchronous DataBase Connection
 * Firebase ==> firestore - NoSQL DB
+
+## Dependency Install 
+* `redux` (for redux store, reducer)
+* `react-redux` (for binding layer, react with redux)
+* `redux-thunk` (for middleware, dispatch action creator)
+* `react-redux-firebase` (for sync with redux store)
+* `redux-firestore` (for DataBase)
+* `firebase` (for firebase service)

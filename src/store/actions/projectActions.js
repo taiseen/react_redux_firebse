@@ -4,8 +4,10 @@
 // 1) dispatch action & 2) reducer 
 
 export const createProject = (project) => {
-    console.log(project)
-    return (dispatch, getState) => {
+
+    // console.log(project)
+
+    return (dispatch, getState, { getFirebase, getFirestore }) => {
 
         // make asynchronous call for DataBase 
 
