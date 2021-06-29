@@ -1,14 +1,18 @@
 // 18-Jun-2021 | 26-Jun-2021
 
-import authReducer from './authReducer'; // 1
-import projectReducer from './projectReducer'; // 1
-import { combineReducers } from 'redux'; // 2
-import { firestoreReducer } from 'redux-firestore'
+import authReducer from './authReducer'; 
+import projectReducer from './projectReducer'; 
+import { combineReducers } from 'redux';
+import { firestoreReducer } from 'redux-firestore';
+import { firebaseReducer } from 'react-redux-firebase';
 
-const rootReducer = combineReducers({ // 3
-    auth: authReducer, // 4
-    project: projectReducer, // 4
-    firestore: firestoreReducer, 
+const rootReducer = combineReducers({ 
+
+    auth: authReducer, 
+    project: projectReducer,
+    firestore: firestoreReducer,
+    firebaseAuth: firebaseReducer
+
 });
 
 export default rootReducer;
