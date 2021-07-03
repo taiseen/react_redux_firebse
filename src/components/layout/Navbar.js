@@ -3,13 +3,13 @@ import SignedInLinks from './SignedInLinks';
 import SignedOntLinks from './SignedOntLinks';
 import { connect } from 'react-redux';
 
-const Navbar = (props) => {
+const Navbar = ({ userAuth }) => {
 
-    
-    const { uid } = props.userAuth;
+
+    const { uid } = userAuth;
 
     const links = uid ? <SignedInLinks /> : <SignedOntLinks />
-    
+
     return (
         <nav className='nav-wrapper grey darken-3'>
             <div className='container'>
@@ -21,9 +21,9 @@ const Navbar = (props) => {
 };
 
 const mapStateToProps = (state) => {
-    console.log(state)
+    // console.log(state)
     return {
-        userAuth: state.firebaseAuth.auth
+        userAuth: state.firebaseAuth.auth,
     }
 }
 

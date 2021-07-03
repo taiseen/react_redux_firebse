@@ -46,7 +46,7 @@ class SignIn extends Component {
                         <button className="btn pink lighten-1 z-depth-0">Login</button>
                     </div>
                     <div className="red-text center">
-                        {authError ? <p>{authError}</p> : <p>{authError}</p>}
+                        {authError ? <p>{authError}</p> : null}
                     </div>
                 </form>
             </div>
