@@ -21,14 +21,20 @@ const store = createStore(
     }))
 ); // 3 | 8 | 10
 
+// react-redux-firebase config 
+// sync for firebase + firestore
+const rrfConfig = {
+  userProfile: 'users',
+  useFirestoreForProfile: true,
+}
+// firebaseReducer | Enhancer বর্ধনশীল, উন্নত করা
 const rrfProps = {
 
   firebase,
-  config: firebase,
+  config: rrfConfig,
   dispatch: store.dispatch,
   createFirestoreInstance, // <- needed if using firestore
   attachAuthIsReady: true,
-
 }
 
 function AuthIsLoaded({ children }) {
