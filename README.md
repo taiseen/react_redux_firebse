@@ -1,4 +1,4 @@
-17-Jun-2021 | 26-Jun-2021
+17-Jun-2021 >>to>> 3-July-2021
 # React Redux FireBase APP 
 
 ## Technology Used 
@@ -17,6 +17,7 @@
 * Register that Root Reducer in App.js < Component /> 
 * Redux Thunk | as a middleware for asynchronous DataBase Connection
 * Firebase ==> firestore - NoSQL DB
+* React Route Gard
 
 ## Dependency Install 
 * `redux` (for redux store, reducer)
