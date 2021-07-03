@@ -4,12 +4,17 @@ import ProjectList from '../projects/ProjectList'; // child --> 2
 import { connect } from 'react-redux'; // binding layer of redux with react
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
+import { Redirect } from 'react-router-dom';
 
 class Dashboard extends Component {
 
     render() {
-        const { projects } = this.props;
+        const { projects, userAuth } = this.props;
 
+        // user যদি login করে না থাকে, তাকে login page এ পাঠাও 
+        // if (!userAuth.uid) return <Redirect to='/signin' />
+
+        // user যদি login করে থাকে, তাকে home page এ পাঠাও 
         return (
             <div className="dashboard container">
                 <div className="row">
@@ -33,7 +38,8 @@ const mapStateToProps = (state) => {
 
     return { // Object ==> which property are attach to props
         // projects: state.project.projects
-        projects: state.firestore.ordered.projects
+        projects: state.firestore.ordered.projects,
+        userAuth: state.firebaseAuth.auth
     } // componentState.rootRed.projectReducer
 };
 // Higher Order Component | which return ==> Dashboard Component

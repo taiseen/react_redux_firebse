@@ -1,17 +1,20 @@
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 const ProjectDetails = (props) => {
 
     //console.log(props)
+    const { userAuth } = props;
+    if (!userAuth.uid) return <Redirect to='/signin' />
 
     const { content, title, authorFirstName, authorLastName } = props.location.state;
 
-    const id = props.match.params.id;
+    // const id = props.match.params.id;
 
     return (
         <div className="container section project-details">
             <div className="card z-depth-0">
                 <div className="card-content">
-                    <p>{id}</p>
                     <span className="card-title">{title} </span>
                     <p>{content}</p>
                 </div>
@@ -25,4 +28,10 @@ const ProjectDetails = (props) => {
     );
 };
 
-export default ProjectDetails;
+const mapStateToProps = (state) => {
+    return {
+        userAuth: state.firebaseAuth.auth
+    }
+}
+
+export default connect(mapStateToProps)(ProjectDetails);
