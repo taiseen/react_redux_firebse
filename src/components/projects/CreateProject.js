@@ -21,6 +21,7 @@ class CreateProject extends Component {
     }
 
     render() {
+        document.title = "Create Project";
 
         const { userAuth } = this.props;
 

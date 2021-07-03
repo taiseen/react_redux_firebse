@@ -12,7 +12,7 @@ class SignUp extends Component {
     }
     handleChange = (e) => {
         this.setState({
-            [e.target.id]: e.target.value
+            [e.target.name]: e.target.value
         })
     }
     handleSubmit = (e) => {
@@ -21,7 +21,8 @@ class SignUp extends Component {
     }
 
     render() {
-
+        document.title = "Sign Up";
+        
         const { userAuth } = this.props;
         if (userAuth.uid) return <Redirect to='/' />;
 
@@ -32,22 +33,22 @@ class SignUp extends Component {
 
                     <div className="input-field">
                         <label htmlFor="firstName">First Name</label>
-                        <input type="text" id="firstName" onChange={this.handleChange} />
+                        <input type="text" name="firstName" onChange={this.handleChange} />
                     </div>
 
                     <div className="input-field">
                         <label htmlFor="lastName">Last Name</label>
-                        <input type="text" id="lastName" onChange={this.handleChange} />
+                        <input type="text" name="lastName" onChange={this.handleChange} />
                     </div>
 
                     <div className="input-field">
                         <label htmlFor="email">Email</label>
-                        <input type="email" id="email" onChange={this.handleChange} />
+                        <input type="email" name="email" onChange={this.handleChange} />
                     </div>
 
                     <div className="input-field">
                         <label htmlFor="password">Password</label>
-                        <input type="password" id="password" onChange={this.handleChange} />
+                        <input type="password" name="password" onChange={this.handleChange} />
                     </div>
 
                     <div className="input-field">

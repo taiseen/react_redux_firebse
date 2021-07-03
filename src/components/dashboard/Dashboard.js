@@ -9,10 +9,12 @@ import { Redirect } from 'react-router-dom';
 class Dashboard extends Component {
 
     render() {
+        
         const { projects, userAuth } = this.props;
-
         // user যদি login করে না থাকে, তাকে login page এ পাঠাও 
-        // if (!userAuth.uid) return <Redirect to='/signin' />
+        if (!userAuth.uid) return <Redirect to='/signin' />
+
+        document.title = "Home";
 
         // user যদি login করে থাকে, তাকে home page এ পাঠাও 
         return (

@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom';
 
 const ProjectDetails = (props) => {
 
+    document.title = "Project Details";
+
     //console.log(props)
     const { userAuth } = props;
     if (!userAuth.uid) return <Redirect to='/signin' />

@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 
 const PageNotFound = () => {
 
+    document.title = "404";
+    
     const history = useHistory();
 
     const styleCenter = {
@@ -15,7 +17,7 @@ const PageNotFound = () => {
             history.push('/');
         }, 3000);
 
-    }, []);
+    });
 
     return (
         <div style={styleCenter}>
