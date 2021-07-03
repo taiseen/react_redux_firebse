@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
+import { signUp } from '../../store/actions/authActions'
 
 class SignUp extends Component {
 
@@ -12,18 +13,18 @@ class SignUp extends Component {
     }
     handleChange = (e) => {
         this.setState({
-            [e.target.name]: e.target.value
+            [e.target.id]: e.target.value
         })
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state)
+        this.props.createUser(this.state);
     }
 
     render() {
         document.title = "Sign Up";
-        
-        const { userAuth } = this.props;
+
+        const { userAuth, authError } = this.props;
         if (userAuth.uid) return <Redirect to='/' />;
 
         return (
@@ -33,27 +34,31 @@ class SignUp extends Component {
 
                     <div className="input-field">
                         <label htmlFor="firstName">First Name</label>
-                        <input type="text" name="firstName" onChange={this.handleChange} />
+                        <input type="text" id="firstName" onChange={this.handleChange} required />
                     </div>
 
                     <div className="input-field">
                         <label htmlFor="lastName">Last Name</label>
-                        <input type="text" name="lastName" onChange={this.handleChange} />
+                        <input type="text" id="lastName" onChange={this.handleChange} required />
                     </div>
 
                     <div className="input-field">
                         <label htmlFor="email">Email</label>
-                        <input type="email" name="email" onChange={this.handleChange} />
+                        <input type="email" id="email" onChange={this.handleChange} required />
                     </div>
 
                     <div className="input-field">
                         <label htmlFor="password">Password</label>
-                        <input type="password" name="password" onChange={this.handleChange} />
+                        <input type="password" id="password" onChange={this.handleChange} required />
                     </div>
 
                     <div className="input-field">
                         <button className="btn pink lighten-1 z-depth-0">Sign up</button>
+                        <div className="red-text center">
+                            {authError ? <p>{authError}</p> : null}
+                        </div>
                     </div>
+
                 </form>
             </div>
         )
@@ -62,7 +67,13 @@ class SignUp extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        userAuth: state.firebaseAuth.auth
+        userAuth: state.firebaseAuth.auth,
+        authError: state.auth.authError
     }
 }
-export default connect(mapStateToProps)(SignUp);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        createUser: (newUser) => dispatch(signUp(newUser))
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
